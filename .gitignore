@@ -1,0 +1,6 @@
+Plaintext
+env/
+.env
+*.pyc
+__pycache__/
+media/
