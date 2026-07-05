@@ -63,9 +63,18 @@ class LogoutAPIView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
-        return Response({
-            "message": "Logged out successfully"
-        })
+        try:
+            # دریافت توکن رفرش از بدنه درخواست و باطل کردن آن
+            refresh_token = request.data.get("refresh")
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            return Response({
+                "message": "Logged out successfully"
+            }, status=status.HTTP_205_RESET_CONTENT)
+        except Exception:
+            return Response({
+                "error": "Invalid or missing token"
+            }, status=status.HTTP_400_BAD_REQUEST)
 
 
 class ProfileAPIView(APIView):

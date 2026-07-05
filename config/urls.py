@@ -25,4 +25,7 @@ urlpatterns = [
     path("api/stages/", include("stages.urls")),
     path("api/", include("attributes.urls")),
     path("api/registrations/", include("registrations.urls")),
+    path('api/feedbacks/', include('feedbacks.urls')),
+    path("api/results/", include("results.urls")),
+    path("api/dashboard/", include("dashboard.urls")),
 ]

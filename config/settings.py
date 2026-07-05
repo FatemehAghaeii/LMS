@@ -57,10 +57,10 @@ INSTALLED_APPS = [
 
     # بعداً اضافه کن
     "registrations",
-    # "feedbacks",
-    # "results",
-    # "dashboard",
-    # "common",
+    "feedbacks",
+    "results",
+    "dashboard",
+    "common",
 ]
 
 # --------------------------------------------------
